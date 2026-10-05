@@ -1,0 +1,2207 @@
+Explore gujarat
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Gujarat Explorer | Discover Gujarat</title>
+
+
+<style>
+
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box; scroll-behavior: smooth;
+}
+
+
+:root {
+--primary: #e76f32;
+--primary-dark: #c9551d;
+--secondary: #f4a261;
+--light: #fffaf5;
+--white: #ffffff;
+--dark: #17202a;
+--text: #222222;
+--muted: #777777;
+--border: #eeeeee;
+--shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+}
+ 
+body.dark {
+--light: #101722;
+--white: #1b2635;
+--text: #f5f5f5;
+--muted: #c3cbd6;
+--border: #334155;
+--dark: #f5f5f5;
+}
+
+
+body {
+font-family: "Segoe UI", Arial, sans-serif; background: var(--light);
+color: var(--text); transition: 0.3s;
+}
+
+
+/* ================= NAVBAR ================= */
+
+
+nav {
+position: fixed; top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+
+
+padding: 18px 7%;
+
+
+display: flex;
+justify-content: space-between; align-items: center;
+ 
+background: rgba(255,255,255,0.93); backdrop-filter: blur(15px);
+
+box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+
+body.dark nav {
+background: rgba(16,23,34,0.94);
+}
+
+
+.logo {
+font-size: 25px; font-weight: 800;
+color: var(--primary);
+}
+
+
+.logo span {
+color: var(--text);
+}
+
+
+nav ul {
+list-style: none; display: flex; gap: 30px;
+}
+
+
+nav ul li a {
+text-decoration: none; color: var(--text);
+font-weight: 600; transition: 0.3s;
+ 
+}
+
+
+nav ul li a:hover { color: var(--primary);
+}
+
+
+.nav-buttons { display: flex; gap: 10px;
+}
+
+
+.theme-btn,
+.menu-btn { width: 42px; height: 42px;
+
+border: none; border-radius: 50%;
+
+background: var(--primary); color: white;
+
+cursor: pointer; font-size: 18px;
+}
+
+
+.menu-btn { display: none;
+}
+
+
+/* ================= HERO ================= */
+ 
+.hero {
+min-height: 100vh;
+
+
+display: flex;
+align-items: center;
+
+
+padding: 120px 7% 70px;
+
+
+color: white;
+
+
+background:
+linear-gradient( rgba(0,0,0,0.48),
+rgba(0,0,0,0.55)
+),
+url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=90");
+
+
+background-size: cover; background-position: center;
+}
+
+
+.hero-content {
+max-width: 760px; animation: fadeUp 1s ease;
+}
+
+
+.tag {
+display: inline-block;
+ 
+padding: 10px 18px; margin-bottom: 22px;
+
+border-radius: 30px;
+
+
+background: rgba(255,255,255,0.18); backdrop-filter: blur(10px);
+
+font-weight: 600;
+}
+
+
+.hero h1 {
+font-size: clamp(45px, 7vw, 85px); line-height: 1;
+margin-bottom: 25px;
+}
+
+
+.hero h1 span { color: #ffb067;
+}
+
+
+.hero p {
+max-width: 680px;
+
+
+font-size: 19px; line-height: 1.7;
+
+color: #f2f2f2;
+
+
+margin-bottom: 35px;
+}
+ 
+.hero-buttons { display: flex; gap: 15px;
+flex-wrap: wrap;
+}
+
+
+.btn {
+display: inline-block;
+
+
+padding: 14px 25px;
+
+
+border: none; border-radius: 30px;
+
+cursor: pointer;
+
+
+font-size: 16px; font-weight: 700;
+
+text-decoration: none;
+
+
+transition: 0.3s;
+}
+
+
+.btn-primary {
+background: var(--primary); color: white;
+}
+
+
+.btn-primary:hover {
+ 
+background: var(--primary-dark); transform: translateY(-3px);
+}
+
+
+.btn-outline { color: white;
+border: 2px solid white; background: transparent;
+}
+
+
+.btn-outline:hover { background: white; color: #222;
+}
+
+
+/* ================= SEARCH ================= */
+
+
+.search-area { position: relative; z-index: 20;
+
+max-width: 900px;
+
+
+margin: -45px auto 0;
+
+
+padding: 25px;
+
+
+background: var(--white);
+
+
+border-radius: 20px;
+ 
+box-shadow: var(--shadow);
+}
+
+
+.search-box { display: flex; gap: 12px;
+}
+
+
+.search-box input { flex: 1;
+
+padding: 16px 20px;
+
+
+border: 1px solid var(--border); border-radius: 12px;
+
+outline: none;
+
+
+background: var(--light); color: var(--text);
+
+font-size: 16px;
+}
+
+
+.search-box button { padding: 0 25px;
+
+border: none; border-radius: 12px;
+
+background: var(--primary);
+ 
+color: white;
+
+
+cursor: pointer;
+
+
+font-size: 17px; font-weight: 600;
+}
+
+
+/* ================= SECTIONS ================= */
+
+
+section {
+padding: 95px 7%;
+}
+
+
+.section-title {
+text-align: center; margin-bottom: 45px;
+}
+
+
+.section-title small { color: var(--primary);
+
+font-size: 14px; font-weight: 800;
+
+text-transform: uppercase; letter-spacing: 2px;
+}
+
+
+.section-title h2 { margin: 10px 0;
+ 
+font-size: 42px;
+}
+
+
+.section-title p {
+max-width: 650px;
+
+
+margin: auto;
+
+
+color: var(--muted);
+
+
+line-height: 1.7;
+}
+
+
+/* ================= FILTER ================= */
+
+
+.filters { display: flex;
+justify-content: center; gap: 12px;
+
+flex-wrap: wrap;
+
+
+margin-bottom: 35px;
+}
+
+
+.filter-btn {
+padding: 10px 20px;
+
+
+border: 1px solid var(--border);
+ 
+background: var(--white); color: var(--text);
+
+border-radius: 25px;
+
+
+cursor: pointer;
+
+
+font-weight: 600;
+
+
+transition: 0.3s;
+}
+
+
+.filter-btn:hover,
+.filter-btn.active { background: var(--primary);
+border-color: var(--primary); color: white;
+}
+
+
+/* ================= DESTINATIONS ================= */
+
+
+.destination-grid { display: grid;
+
+grid-template-columns: repeat(3, 1fr);
+
+
+gap: 25px;
+}
+
+
+.destination-card { overflow: hidden;
+ 
+background: var(--white);
+
+
+border-radius: 20px;
+
+
+box-shadow: var(--shadow);
+
+
+transition: 0.35s;
+}
+
+
+.destination-card:hover { transform: translateY(-8px);
+}
+
+
+.image-wrapper { height: 240px;
+
+position: relative;
+
+
+overflow: hidden;
+
+
+background: linear-gradient( 135deg,
+#f4a261, #e76f32
+);
+}
+
+
+.image-wrapper img { width: 100%;
+height: 100%;
+ 
+display: block;
+
+
+object-fit: cover;
+
+
+transition: 0.5s;
+}
+
+
+.destination-card:hover .image-wrapper img { transform: scale(1.08);
+}
+
+
+.category {
+position: absolute;
+
+
+top: 15px; left: 15px;
+
+padding: 7px 13px;
+
+
+border-radius: 20px;
+
+
+background: white; color: #222;
+
+font-size: 11px; font-weight: 800;
+}
+
+
+.favorite {
+position: absolute;
+ 
+top: 15px; right: 15px;
+
+width: 40px; height: 40px;
+
+border: none; border-radius: 50%;
+
+background: white;
+
+
+cursor: pointer;
+
+
+font-size: 19px;
+
+
+transition: 0.2s;
+}
+
+
+.favorite:hover { transform: scale(1.1);
+}
+
+
+.card-content { padding: 22px;
+}
+
+
+.location {
+color: var(--primary);
+
+
+font-size: 13px;
+ 
+font-weight: 700;
+
+
+margin-bottom: 8px;
+}
+
+
+.card-content h3 { font-size: 24px;
+
+margin-bottom: 10px;
+}
+
+
+.card-content p { color: var(--muted);
+
+font-size: 14px; line-height: 1.65;
+
+margin-bottom: 18px;
+}
+
+
+.card-bottom { display: flex;
+justify-content: space-between; align-items: center;
+}
+
+
+.rating {
+font-weight: 700;
+}
+
+
+.explore-btn {
+ 
+border: none;
+
+
+padding: 9px 17px;
+
+
+border-radius: 20px;
+
+
+background: var(--primary); color: white;
+
+cursor: pointer;
+
+
+font-weight: 600;
+}
+
+
+/* ================= STATS ================= */
+
+
+.stats {
+padding: 60px 7%;
+
+
+display: grid;
+
+
+grid-template-columns: repeat(4, 1fr);
+
+
+gap: 20px;
+
+
+background: var(--dark);
+
+
+color: white;
+
+
+text-align: center;
+}
+ 
+.stat h2 {
+color: #ff9b5e;
+
+
+font-size: 40px;
+
+
+margin-bottom: 7px;
+}
+
+
+.stat p {
+color: #cccccc;
+}
+
+
+/* ================= FOOD ================= */
+
+
+.food-section { background: #fff3e8;
+}
+
+
+body.dark .food-section { background: #17202a;
+}
+
+
+.food-grid { display: grid;
+
+grid-template-columns: repeat(4, 1fr);
+
+
+gap: 22px;
+}
+ 
+.food-card { overflow: hidden;
+
+background: var(--white);
+
+
+border-radius: 18px;
+
+
+box-shadow: var(--shadow);
+
+
+transition: 0.3s;
+}
+
+
+.food-card:hover {
+transform: translateY(-7px);
+}
+
+
+.food-image { height: 200px;
+
+background-size: cover; background-position: center;
+}
+
+
+.food-info { padding: 19px;
+}
+
+
+.food-info h3 {
+margin-bottom: 8px;
+}
+ 
+.food-info p {
+color: var(--muted);
+
+
+font-size: 14px; line-height: 1.6;
+}
+
+
+/* ================= ABOUT ================= */
+
+
+.about-box {
+max-width: 1000px;
+
+
+margin: auto;
+
+
+padding: 50px;
+
+
+border-radius: 25px;
+
+
+background:
+linear-gradient( 135deg, rgba(231,111,50,0.1),
+rgba(244,162,97,0.12)
+);
+
+
+text-align: center;
+}
+
+
+.about-box h2 { font-size: 35px;
+margin-bottom: 15px;
+ 
+}
+
+
+.about-box p {
+max-width: 750px;
+
+
+margin: auto;
+
+
+color: var(--muted);
+
+
+line-height: 1.8;
+}
+
+
+/* ================= MODAL ================= */
+
+
+.modal { position: fixed;
+
+inset: 0;
+
+
+z-index: 3000;
+
+
+display: none;
+
+
+align-items: center; justify-content: center;
+
+padding: 20px;
+
+
+background: rgba(0,0,0,0.75);
+}
+ 
+.modal.show { display: flex;
+}
+
+
+.modal-content { width: 100%;
+max-width: 600px;
+
+
+overflow: hidden;
+
+
+background: var(--white);
+
+
+border-radius: 22px;
+
+
+animation: zoomIn 0.3s ease;
+}
+
+
+.modal-content img { width: 100%; height: 280px;
+
+display: block;
+
+
+object-fit: cover;
+}
+
+
+.modal-body { padding: 27px;
+}
+
+
+.modal-body h2 {
+ 
+margin-bottom: 12px;
+}
+
+
+.modal-body p { color: var(--muted);
+
+line-height: 1.7;
+
+
+margin-bottom: 22px;
+}
+
+
+.close {
+float: right;
+
+
+width: 36px; height: 36px;
+
+border: none; border-radius: 50%;
+
+background: #eeeeee;
+
+
+cursor: pointer;
+
+
+font-size: 18px;
+}
+
+
+/* ================= FOOTER ================= */
+
+
+footer {
+padding: 55px 7% 25px;
+ 
+background: #101010;
+
+
+color: white;
+}
+
+
+.footer-content { display: grid;
+
+grid-template-columns: 2fr 1fr 1fr;
+
+
+gap: 40px;
+
+
+margin-bottom: 35px;
+}
+
+
+footer h2 {
+color: #ff9b5e;
+
+
+margin-bottom: 15px;
+}
+
+
+footer h3 {
+margin-bottom: 15px;
+}
+
+
+footer p, footer li {
+color: #aaaaaa;
+
+
+line-height: 1.8;
+ 
+}
+
+
+footer ul {
+list-style: none;
+}
+
+
+.copyright {
+padding-top: 20px;
+
+
+border-top: 1px solid #333;
+
+
+color: #888;
+
+
+text-align: center;
+}
+
+
+/* ================= ANIMATIONS ================= */
+
+
+@keyframes fadeUp {
+
+
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+
+
+to {
+opacity: 1;
+transform: translateY(0);
+}
+
+
+}
+ 
+@keyframes zoomIn {
+
+
+from {
+opacity: 0;
+transform: scale(0.85);
+}
+
+
+to {
+opacity: 1; transform: scale(1);
+}
+
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+
+@media(max-width: 1050px) {
+
+
+.destination-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+
+.food-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+
+.stats {
+grid-template-columns: repeat(2, 1fr);
+}
+ 
+}
+
+
+@media(max-width: 700px) {
+
+
+nav ul {
+display: none;
+}
+
+
+.menu-btn { display: block;
+}
+
+
+.destination-grid,
+.food-grid {
+grid-template-columns: 1fr;
+}
+
+
+.stats {
+grid-template-columns: 1fr 1fr;
+}
+
+
+.footer-content {
+grid-template-columns: 1fr;
+}
+
+
+.hero h1 {
+font-size: 50px;
+}
+
+
+.search-box {
+flex-direction: column;
+ 
+}
+
+
+.search-box button { padding: 14px;
+}
+
+
+.about-box {
+padding: 30px 20px;
+}
+
+
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+
+<nav>
+
+
+<div class="logo"> Gujarat<span>Explorer</span>
+</div>
+
+
+<ul>
+
+
+<li>
+<a href="#home">Home</a>
+</li>
+ 
+<li>
+<a href="#places">Places</a>
+</li>
+
+
+<li>
+<a href="#food">Food</a>
+</li>
+
+
+<li>
+<a href="#about">About</a>
+</li>
+
+
+</ul>
+
+
+<div class="nav-buttons">
+
+
+<button class="theme-btn"
+onclick="toggleTheme()">
+🌙
+</button>
+
+
+<button class="menu-btn">
+☰
+</button>
+
+
+</div>
+
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+ 
+<section class="hero" id="home">
+
+
+<div class="hero-content">
+
+
+<span class="tag">
+✨ Discover the Spirit of Gujarat
+</span>
+
+
+<h1>
+Explore
+<span>Gujarat</span>
+<br>
+Like Never Before.
+</h1>
+
+
+<p>
+From the magical white desert of Kutch to peaceful beaches and historic cities, discover the places, culture and food that make Gujarat unforgettable.
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+href="#places" class="btn btn-primary"> Explore Places →
+</a>
+ 
+<a
+href="#food"
+class="btn btn-outline"> Discover Food
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+
+<div class="search-area">
+
+
+<div class="search-box">
+
+
+<input
+type="text" id="searchInput"
+placeholder="Search Gujarat places...">
+
+
+<button onclick="searchPlaces()">
+🔎 Search
+</button>
+
+
+</div>
+
+
+</div>
+ 
+<!-- ================= DESTINATIONS ================= -->
+
+
+<section id="places">
+
+
+<div class="section-title">
+
+
+<small>
+Explore Gujarat
+</small>
+
+
+<h2>
+Popular Destinations
+</h2>
+
+
+<p>
+Discover beautiful destinations, historic landmarks, beaches,
+wildlife and peaceful natural locations.
+</p>
+
+
+</div>
+
+
+<div class="filters">
+
+
+<button
+class="filter-btn active" onclick="filterPlaces('all', this)"> All
+</button>
+
+
+<button
+ 
+class="filter-btn" onclick="filterPlaces('heritage', this)"> Heritage
+</button>
+
+
+<button class="filter-btn"
+onclick="filterPlaces('nature', this)"> Nature
+</button>
+
+
+<button class="filter-btn"
+onclick="filterPlaces('beach', this)"> Beach
+</button>
+
+
+<button class="filter-btn"
+onclick="filterPlaces('wildlife', this)"> Wildlife
+</button>
+
+
+</div>
+
+
+<div
+class="destination-grid" id="destinationGrid">
+</div>
+
+
+</section>
+ 
+<!-- ================= STATS ================= -->
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+
+<h2>33+</h2>
+
+
+<p>
+Districts
+</p>
+
+
+</div>
+
+
+<div class="stat">
+
+
+<h2>1600+</h2>
+
+
+<p>
+Years of Heritage
+</p>
+
+
+</div>
+
+
+<div class="stat">
+
+
+<h2>1600 KM</h2>
+
+
+<p>
+Coastline
+ 
+</p>
+
+
+</div>
+
+
+<div class="stat">
+
+
+<h2>100+</h2>
+
+
+<p>
+Experiences
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOD ================= -->
+
+
+<section
+class="food-section" id="food">
+
+<div class="section-title">
+
+
+<small>
+Taste Gujarat
+</small>
+
+
+<h2>
+Must-Try Gujarati Food
+</h2>
+ 
+<p>
+A Gujarat trip is incomplete without experiencing its famous traditional food.
+</p>
+
+
+</div>
+
+
+<div class="food-grid">
+
+
+<div class="food-card">
+
+
+<div
+class="food-image" style="
+background-image:
+url('https://commons.wikimedia.org/wiki/Special:FilePath/Khaman_Gujarati_cuisine.jpg');
+">
+</div>
+
+
+<div class="food-info">
+
+
+<h3>
+🥟 Khaman
+</h3>
+
+
+<p>
+Soft, fluffy and one of Gujarat's most loved snacks.
+</p>
+ 
+</div>
+
+
+</div>
+
+
+<div class="food-card">
+
+
+<div
+class="food-image" style="
+background-image:
+url('https://commons.wikimedia.org/wiki/Special:FilePath/Authentic_gujarati_thali.jpg');
+">
+</div>
+
+
+<div class="food-info">
+
+
+<h3>
+🍛 Gujarati Thali
+</h3>
+
+
+<p>
+A traditional meal filled with different flavors and dishes.
+</p>
+
+
+</div>
+
+
+</div>
+ 
+<div class="food-card">
+
+
+<div
+class="food-image" style="
+background-image:
+url('https://commons.wikimedia.org/wiki/Special:FilePath/Fafda_Jalebi_at_Surat.png');
+">
+</div>
+
+
+<div class="food-info">
+
+
+<h3>
+🥞 Fafda-Jalebi
+</h3>
+
+
+<p>
+A popular Gujarati combination enjoyed especially during festivals.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<div class="food-card">
+
+
+<div
+class="food-image" style="
+ 
+background-image:
+url('https://commons.wikimedia.org/wiki/Special:FilePath/Dhokla_%28Gujarati_snack%29.jpg');
+">
+</div>
+
+
+<div class="food-info">
+
+
+<h3>
+🍽️ Iddada
+</h3>
+
+
+<p>
+A light steamed snack made from fermented batter.
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+
+<section id="about">
+
+
+<div class="about-box">
+ 
+<h2>
+One State. Endless Experiences.
+</h2>
+
+
+<p>
+Gujarat brings together ancient heritage, vibrant culture, beautiful landscapes, wildlife and unforgettable food.
+Gujarat Explorer is designed as a simple digital guide for discovering these experiences through an interactive website.
+</p>
+
+
+</div>
+
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+
+<footer>
+
+
+<div class="footer-content">
+
+
+<div>
+
+
+<h2>
+GujaratExplorer
+</h2>
+
+
+<p>
+Your digital guide to exploring
+ 
+the beauty, culture, food and heritage of Gujarat.
+</p>
+
+
+</div>
+
+
+<div>
+
+
+<h3>
+Explore
+</h3>
+
+
+<ul>
+
+
+<li>
+Destinations
+</li>
+
+
+<li>
+Gujarati Food
+</li>
+
+
+<li>
+Heritage
+</li>
+
+
+<li>
+Nature
+</li>
+
+
+</ul>
+ 
+</div>
+
+
+<div>
+
+
+<h3>
+Website
+</h3>
+
+
+<ul>
+
+
+<li>
+Home
+</li>
+
+
+<li>
+Places
+</li>
+
+
+<li>
+Food
+</li>
+
+
+<li>
+About
+</li>
+
+
+</ul>
+
+
+</div>
+ 
+</div>
+
+
+<div class="copyright">
+
+
+© 2026 Gujarat Explorer
+| Created with HTML, CSS & JavaScript
+
+
+</div>
+
+
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+
+
+<div
+class="modal" id="modal">
+
+<div class="modal-content">
+
+
+<img
+id="modalImage" src="" alt="Destination">
+
+<div class="modal-body">
+
+
+<button class="close"
+onclick="closeModal()">
+✕
+</button>
+ 
+<h2
+id="modalTitle">
+</h2>
+
+
+<p
+id="modalDescription">
+</p>
+
+
+<button
+class="btn btn-primary" onclick="closeModal()"> Close
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+/* ===================================================== DESTINATION DATA
+===================================================== */
+
+
+const destinations = [
+
+
+{
+name: "Rann of Kutch",
+ 
+location: "Kutch, Gujarat", category: "nature", rating: "4.9 ⭐",
+
+image:
+"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Experience the magical landscapes of Kutch and discover the famous white desert experience during the Rann Utsav."
+},
+
+
+{
+name: "Statue of Unity", location: "Kevadia, Gujarat", category: "heritage",
+rating: "4.8 ⭐",
+
+
+image:
+"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Explore one of India's famous landmarks surrounded by beautiful landscapes and attractions."
+},
+
+
+{
+name: "Dwarka",
+location: "Devbhoomi Dwarka", category: "heritage",
+rating: "4.8 ⭐",
+ 
+image:
+"https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Explore the historic coastal city of Dwarka and discover its temples, culture and beautiful surroundings."
+},
+
+
+{
+name: "Somnath", location: "Gir Somnath", category: "heritage", rating: "4.9 ⭐",
+
+image:
+"https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Discover the famous Somnath Temple and enjoy the beautiful coastal environment of the Arabian Sea."
+},
+
+
+{
+name: "Gir National Park", location: "Sasan Gir", category: "wildlife", rating: "4.7 ⭐",
+
+image:
+ 
+"https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Explore the famous wildlife region of Gujarat and learn about its unique biodiversity."
+},
+
+
+{
+name: "Diu Beach", location: "Diu", category: "beach", rating: "4.6 ⭐",
+
+image:
+"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Relax beside the Arabian Sea and enjoy peaceful beaches, sunsets and coastal scenery."
+},
+
+
+{
+name: "Ahmedabad",
+location: "Ahmedabad, Gujarat", category: "heritage",
+rating: "4.8 ⭐",
+
+
+image:
+"https://upload.wikimedia.org/wikipedia/commons/8/8e/Sabarmati_riverside.jpg",
+
+
+description:
+ 
+"Discover Gujarat's vibrant city life, historic architecture, heritage areas and famous food culture."
+},
+
+
+{
+name: "Saputara", location: "Dang, Gujarat", category: "nature", rating: "4.7 ⭐",
+
+image:
+"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Escape into greenery and peaceful landscapes in Gujarat's popular hill destination."
+},
+
+
+{
+name: "Mandvi", location: "Kutch, Gujarat", category: "beach",
+rating: "4.6 ⭐",
+
+
+image:
+"https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=90",
+
+
+description:
+"Enjoy golden beaches, coastal views and the historic charm of Mandvi in Kutch."
+}
+ 
+];
+
+
+/* ===================================================== FALLBACK IMAGE
+If an online image fails, this creates a proper illustrated image automatically.
+===================================================== */
+
+
+function fallbackImage(placeName) {
+
+
+const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="1200"
+height="700"
+viewBox="0 0 1200 700">
+
+
+<defs>
+
+
+<linearGradient id="sky" x1="0"
+y1="0"
+x2="0" y2="1">
+
+<stop
+offset="0%"
+stop-color="#87CEEB"/>
+
+
+<stop
+offset="100%"
+ 
+stop-color="#F4A261"/>
+
+
+</linearGradient>
+
+
+</defs>
+
+
+<rect
+width="1200" height="700" fill="url(#sky)"/>
+
+<circle
+cx="950" cy="130" r="75"
+fill="#FFD166"/>
+
+
+<polygon
+points="0,520 350,250 650,520"
+fill="#657786"/>
+
+
+<polygon
+points="400,520 750,220 1200,520"
+fill="#536878"/>
+
+
+<polygon
+points="0,700 0,550 1200,540 1200,700"
+fill="#D8A15D"/>
+
+
+<text
+x="600"
+ 
+y="610"
+text-anchor="middle" font-family="Arial" font-size="55"
+font-weight="bold" fill="white">
+
+${placeName}
+
+
+</text>
+
+
+<text
+x="600" y="660"
+text-anchor="middle" font-family="Arial" font-size="25" fill="white">
+
+Gujarat Explorer
+
+
+</text>
+
+
+</svg>
+`;
+
+
+return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+}
+
+
+/* =====================================================
+ 
+DISPLAY DESTINATIONS
+===================================================== */
+
+
+function displayPlaces(list) {
+
+
+const grid = document.getElementById("destinationGrid");
+
+grid.innerHTML = "";
+
+
+if (list.length === 0) {
+
+
+grid.innerHTML = `
+
+
+<div style="
+grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--muted);
+">
+
+
+<div style="font-size:55px;">
+🔎
+</div>
+
+
+<h2>
+No destinations found
+</h2>
+
+
+<p>
+Try searching for another Gujarat destination.
+ 
+</p>
+
+
+</div>
+
+
+`;
+
+
+return;
+}
+
+
+list.forEach((place) => {
+
+
+const originalIndex = destinations.indexOf(place);
+
+const card = document.createElement("div");
+
+card.className = "destination-card";
+
+card.innerHTML = `
+
+
+<div class="image-wrapper">
+
+
+<img
+src="${place.image}" alt="${place.name}" onerror="
+this.onerror=null; this.src=fallbackImage('${place.name}');
+">
+ 
+<span class="category">
+${place.category.toUpperCase()}
+</span>
+
+
+<button class="favorite"
+onclick="addFavorite(this)">
+♡
+</button>
+
+
+</div>
+
+
+<div class="card-content">
+
+
+<div class="location">
+📍 ${place.location}
+</div>
+
+
+<h3>
+${place.name}
+</h3>
+
+
+<p>
+${place.description}
+</p>
+
+
+<div class="card-bottom">
+
+
+<span class="rating">
+${place.rating}
+ 
+</span>
+
+
+<button class="explore-btn"
+onclick="openModal(${originalIndex})">
+
+
+Explore →
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+`;
+
+
+grid.appendChild(card);
+
+
+});
+
+
+}
+
+
+/* ===================================================== FILTER
+===================================================== */
+
+
+function filterPlaces(category, button) {
+
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(btn => {
+ 
+btn.classList.remove("active");
+
+
+});
+
+
+button.classList.add("active");
+
+
+if (category === "all") {
+
+
+displayPlaces(destinations);
+
+
+}
+
+
+else {
+
+
+const filtered = destinations.filter(place =>
+place.category === category
+);
+
+
+displayPlaces(filtered);
+
+
+}
+
+
+}
+
+
+/* ===================================================== SEARCH
+===================================================== */
+
+
+function searchPlaces() {
+ 
+const input = document
+.getElementById("searchInput")
+.value
+.toLowerCase()
+.trim();
+
+
+const result = destinations.filter(place =>
+
+place.name
+.toLowerCase()
+.includes(input)
+
+
+||
+
+
+place.location
+.toLowerCase()
+.includes(input)
+
+
+||
+
+
+place.category
+.toLowerCase()
+.includes(input)
+
+
+);
+
+
+displayPlaces(result);
+ 
+document
+.getElementById("places")
+.scrollIntoView({ behavior: "smooth"
+});
+
+
+}
+
+
+/* ===================================================== ENTER KEY SEARCH
+===================================================== */
+
+
+document
+.getElementById("searchInput")
+.addEventListener( "keyup", function(event) {
+
+if (event.key === "Enter") {
+
+
+searchPlaces();
+
+
+}
+
+
+}
+);
+
+
+/* ===================================================== FAVORITE
+===================================================== */
+ 
+function addFavorite(button) {
+
+
+if (button.innerText === "♡") {
+
+
+button.innerText = "♥";
+
+
+button.style.color = "#e63946";
+
+button.style.transform = "scale(1.15)";
+
+}
+
+
+else {
+
+
+button.innerText = "♡";
+
+
+button.style.color = "#222";
+
+button.style.transform = "scale(1)";
+
+}
+
+
+}
+
+
+/* ===================================================== MODAL
+===================================================== */
+ 
+function openModal(index) {
+
+
+const place = destinations[index];
+
+const image = document.getElementById("modalImage");
+
+image.src = place.image;
+
+image.onerror = function() {
+
+this.onerror = null;
+
+
+this.src = fallbackImage(place.name);
+
+};
+
+
+document
+.getElementById("modalTitle")
+.innerText = place.name;
+
+document
+.getElementById("modalDescription")
+.innerText = place.description;
+ 
+document
+.getElementById("modal")
+.classList.add("show");
+
+
+}
+
+
+/* ===================================================== CLOSE MODAL
+===================================================== */
+
+
+function closeModal() {
+
+
+document
+.getElementById("modal")
+.classList.remove("show");
+
+
+}
+
+
+document
+.getElementById("modal")
+.addEventListener( "click", function(event) {
+
+if (event.target === this) {
+
+
+closeModal();
+
+
+}
+ 
+}
+);
+
+
+/* ===================================================== DARK MODE
+===================================================== */
+
+
+function toggleTheme() {
+
+
+document
+.body
+.classList
+.toggle("dark");
+
+
+const button = document.querySelector(".theme-btn");
+
+if ( document.body
+.classList
+.contains("dark")
+) {
+
+
+button.innerText = "☀️";
+
+
+}
+
+
+else {
+
+
+button.innerText = "🌙";
+ 
+}
+
+
+}
+
+
+/* ===================================================== INITIAL LOAD
+===================================================== */
+
+
+displayPlaces(destinations);
+
+
+</script>
+
+
+</body>
+</html>
+
+ 
+ 
+
+
+
+
+
